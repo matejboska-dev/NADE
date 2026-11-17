@@ -26,3 +26,4 @@ assets/ui/*
 !assets/ui/ui.js
 !assets/ui/base.css
 !assets/ui/cards.css
+.vercel
