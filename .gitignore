@@ -1,0 +1,28 @@
+.DS_Store
+shots/
+.taste-skill/
+.impeccable/
+.claude/
+# originals and the internal brief stay local; the site uses the copies in img/
+brief.html
+fotky/
+logo/
+# the design kit: only what the page loads is published
+assets/backgrounds/
+assets/components/
+assets/diagrams/
+assets/effects/
+assets/moments/
+assets/objects/
+assets/photos/
+assets/scenes/
+assets/starter.html
+assets/icons/*
+!assets/icons/icon.css
+assets/layout/*
+!assets/layout/layout.css
+!assets/layout/layout.js
+assets/ui/*
+!assets/ui/ui.js
+!assets/ui/base.css
+!assets/ui/cards.css

@@ -1,0 +1,620 @@
+<!doctype html>
+<!-- type: service
+     deal: hero photo (foto_50, data-box none, calm left), nav split-plain (logo, five words, one button), close word,
+           footer dark, rhythm dark-band (quality) + flat grounds, buttons arrow, mark: client logo files,
+           type Bricolage Grotesque + Figtree, palette: brand (cool steel neutrals, accent = the logo's teal #006C82), radius sharp
+     user-requested deviations from the kit: a slow customer-logo marquee in the hero foot (pause button removed at the user's request), the
+     wordmark set large at the hero's foot, a drawn map of the plant's region. -->
+<html lang="cs" data-type="service" data-radius="sharp" data-buttons="arrow" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NADE: svařované sestavy pro železnici, vyrobeno v Česku</title>
+<meta name="description" content="NADE vyrábí v Krásnu svařované sestavy, skříně a CNC obráběné díly pro kolejová vozidla. Pošlete výkres a získáte technické posouzení.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Figtree:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<script>try{var t=new URLSearchParams(location.search).get("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+:root {
+  /* brand tokens as the client gave them */
+  --color-brand-primary: #00748D; --color-brand-navy: #1F2D3B;
+  --color-text-primary: #232323; --color-text-inverse: #FFFFFF;
+  --color-bg-primary: #FFFFFF; --color-bg-secondary: #EDEDED; --color-bg-warm: #E5E3DF;
+  --color-cta-primary: #FFB547; --color-cta-hover: #F5A623; --color-cta-text: #1F2D3B;
+  --color-link: #00748D; --color-border: #EDEDED; --color-focus: #1F2D3B;
+  /* roles: the default theme is "teal"; ?theme=warm | navy | ice | amber tries the others */
+  --cta-bg: var(--color-brand-navy); --cta-ink: #ffffff; --cta-hover: var(--color-brand-primary);
+  --band-bg: var(--color-brand-primary); --band-ink: #ffffff; --band-muted: rgb(255 255 255 / .85); --band-line: rgb(255 255 255 / .28); --band-line-strong: rgb(255 255 255 / .75);
+  --dark-bg: var(--color-brand-navy);
+  /* the kit's tokens, mapped to them: white page, warm grey grounds, navy band, teal accent, amber action */
+  --p-bg: var(--color-bg-primary); --p-surface: var(--color-bg-warm); --p-ink: var(--color-text-primary); --p-muted: #5b5f64;
+  --p-accent: var(--color-brand-primary); --p-accent-ink: #ffffff; --p-action: var(--cta-bg); --p-action-ink: var(--cta-ink);
+  --p-inv-bg: var(--dark-bg); --p-inv-surface: #2a3c4e; --p-inv-ink: #ffffff; --p-inv-muted: #aab7c3;
+  --p-inv-accent: #3fb6d0; --p-inv-accent-ink: #1F2D3B; --p-inv-action: var(--cta-bg); --p-inv-action-ink: var(--cta-ink);
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-text: "Figtree", system-ui, sans-serif;
+  --display-weight: 600;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.045em;
+  --display-stretch: 100%;
+  --ly-scale: 0.9;
+}
+
+/* ---- page CSS: only what sits inside a visual or has no kit class ---- */
+.nav__logo img { display: block; height: 24px; width: auto; }
+.footer .nav__logo img { height: 28px; }
+
+/* hero: centred claim, pills, customers, then the video */
+main > section.hero-x.hero-x { height: auto; min-height: 0; padding: calc(var(--nav) + var(--s-7)) 0 var(--s-9); background: var(--p-bg); text-align: center; }
+.hero-x .wrap { display: flex; flex-direction: column; align-items: center; gap: var(--s-5); height: auto; }
+.hero-x .wrap > * { flex: none; }
+.hero-x__h { margin: 0; max-width: none; font: 800 clamp(44px, 8.6vw, 128px)/1.02 var(--font-display); letter-spacing: -0.038em; font-stretch: 100%; text-wrap: balance; hyphens: none; }
+.h1-bold { display: inline-block; font-weight: 800; }
+.h1-light { display: block; font-weight: 300; letter-spacing: -0.05em; }
+.h1-tile { position: relative; display: inline-block; width: 1.5em; height: .72em; margin-inline: .1em; vertical-align: baseline; border-radius: .2em;
+  background: linear-gradient(145deg, #12a0bf 0%, #00748D 52%, #1F2D3B 135%); box-shadow: 0 .1em .3em -.12em rgb(11 24 34 / .35), inset 0 1px 0 rgb(255 255 255 / .35); }
+.h1-tile img { position: absolute; left: 50%; top: 50%; display: block; height: .25em; width: auto; transform: translate(-50%, -50%); }
+.pills { list-style: none; margin: var(--s-2) 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-3); }
+.pills li { margin: 0; padding: 0; }
+.hchip { display: inline-flex; align-items: center; gap: 12px; padding: 6px 20px 6px 6px; background: #f4f4f3; border: 1px solid #e1e1df; color: var(--ink); border-radius: 999px; text-decoration: none;
+  font: 600 15px/1 var(--font-text); box-shadow: 0 1px 2px rgb(11 24 34 / .06), 0 10px 26px -14px rgb(11 24 34 / .28); }
+.hchip__ic { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 10px; color: #fff; }
+.hchip__ic svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.hchip__ic svg.fill { fill: currentColor; stroke: none; }
+.hchip__ic--a { background: #00748D; } .hchip__ic--b { background: #1F2D3B; } .hchip__ic--c { background: #1596b2; } .hchip__ic--d { background: #00748D; }
+.hero-x__cta { margin-top: var(--s-2); justify-content: center; }
+.logo-bar { position: relative; width: 100%; max-width: 920px; height: 72px; margin-top: var(--s-3); display: flex; align-items: center; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
+.logo-bar__view { flex: 1; min-width: 0; height: 100%; overflow: hidden; display: flex; align-items: center; }
+.logo-bar__track { display: flex; flex: none; width: max-content; animation: logo-run 48s linear infinite; }
+.logo-bar__item { position: relative; flex: none; width: 176px; height: 64px; overflow: hidden; display: block; }
+.logo-bar__item img { position: absolute; left: 0; top: 50%; width: 176px; height: 176px; max-width: none; transform: translateY(-50%); }
+@keyframes logo-run { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .logo-bar__track { animation: none; } }
+.hero-x__media { position: relative; width: 100%; margin-top: var(--s-5); aspect-ratio: 16 / 9; overflow: hidden; border-radius: 28px; background: #06121e; }
+.hero-x__video { position: absolute; left: 0; top: -12%; display: block; width: 100%; height: 124%; object-fit: cover; }
+@media (max-width: 639px) {
+  main > section.hero-x { padding-top: calc(var(--nav) + var(--s-6)); padding-bottom: var(--s-8); }
+  .hero-x__h { font-size: clamp(40px, 13vw, 64px); }
+  .h1-bold { display: inline; }
+  .hchip { font-size: 14px; padding-right: 16px; }
+  .logo-bar { height: 56px; }
+  .logo-bar__item { width: 132px; height: 48px; }
+  .logo-bar__item img { width: 132px; height: 132px; }
+  .hero-x__media { aspect-ratio: 4 / 5; border-radius: 20px; }
+  .hero-x__cta { width: 100%; }
+}
+
+/* sections */
+.section-head h2 .muted { display: inline; }
+.tile--tall { --tile-ratio: 4 / 5; }
+.tile__media img { object-position: var(--pos, 50% 50%); }
+.tile .step-num { font: 500 var(--t-label)/1 var(--font-text); color: var(--ink); font-variant-numeric: tabular-nums; }
+.tile__head > h3 { font: 500 var(--t-card)/1.25 var(--font-text); }
+.tile > p { color: var(--ink); font-size: var(--t-body); }
+
+/* work: the peek list's picture fills the column */
+
+/* certificates: documents on the dark band */
+.cert { display: grid; gap: var(--s-4); align-content: start; color: inherit; }
+.cert__doc { aspect-ratio: 4 / 3; overflow: clip; border-radius: var(--r-lg); background: #fff; }
+.cert__doc img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transition: transform 600ms var(--ease); }
+a.cert:hover .cert__doc img { transform: scale(1.03); }
+.cert h3 { font: 500 var(--t-card)/1.3 var(--font-text); }
+.cert__meta { color: var(--muted); font-size: var(--t-small); }
+.cert .link { justify-self: start; }
+
+.side-photo { margin-top: var(--s-6); aspect-ratio: 2 / 1; overflow: clip; border-radius: var(--r-lg); background: var(--surface); }
+.side-photo img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); }
+
+/* enquiry form */
+.enquiry-form { background: var(--surface); padding: var(--s-7); border-radius: var(--r-lg); }
+.enquiry-form .form { gap: var(--s-4); }
+.enquiry-form textarea { min-height: 96px; }
+.enquiry-form input[type="file"] { padding-block: 10px; }
+.enquiry-form .note { grid-column: 1 / -1; color: var(--muted); font-size: var(--t-small); margin: 0; }
+@media (max-width: 639px) { .enquiry-form { padding: var(--s-5); } }
+.sent { display: none; }
+
+/* language switch: a flag dropdown in the nav */
+.nav__actions { gap: var(--s-3); }
+.nav:not(.is-open) .nav__actions > .lang { display: block; }   /* the kit hides every nav action but the main one on a tablet and phone */
+.lang { position: relative; }
+.lang__btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px; background: transparent; color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--r-btn); font: 500 15px var(--font-text); cursor: pointer; }
+.lang__btn:hover { background: color-mix(in oklab, var(--bg) 94%, var(--ink)); }
+.lang__btn .chev { transition: transform 150ms var(--ease); }
+.flag { width: 22px; height: 15px; flex: none; display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgb(0 0 0 / .14); }
+.lang__menu { position: absolute; right: 0; top: calc(100% + 8px); z-index: 30; min-width: 184px; margin: 0; padding: 6px; list-style: none;
+  background: var(--bg); border: 1px solid var(--line-strong); border-radius: var(--r-md); }
+.lang__menu[hidden] { display: none; }
+.lang__menu li { margin: 0; padding: 0; }
+.lang__menu button { display: flex; align-items: center; gap: 12px; width: 100%; height: 44px; padding: 0 12px; border: 0; background: none; color: var(--ink);
+  font: 400 16px var(--font-text); text-align: left; border-radius: var(--r-sm); cursor: pointer; }
+.lang__menu button:hover, .lang__menu button:focus-visible { background: color-mix(in oklab, var(--bg) 92%, var(--ink)); }
+.lang__menu button[aria-selected="true"] { font-weight: 500; }
+.lang__menu button[aria-selected="true"]::after { content: ""; margin-left: auto; width: 6px; height: 10px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(40deg) translateY(-2px); }
+@media (max-width: 639px) { .lang__code { display: none; } .lang__btn { padding: 0 10px; gap: 6px; } }
+@media (max-width: 480px) {
+  /* a narrow phone: logo, flag, the main action and the menu button must fit one 342px row, in the longest language too */
+  .nav__logo img { height: 22px; }
+  .lang__code, .lang .chev { display: none; }
+  .lang__btn { padding: 0 9px; }
+  .nav:not(.is-open) .nav__actions { gap: var(--s-2); }
+  .nav:not(.is-open) .nav__actions .btn { font-size: 13px; padding-inline: 10px; }
+  .nav:not(.is-open) .nav__actions .btn .m-arrow { display: none; }
+}
+/* the open phone menu: the switch is a full-width row and its list opens upward */
+.nav.is-open .lang { width: 100%; }
+.nav.is-open .lang__btn { width: 100%; height: 48px; justify-content: flex-start; padding: 0 14px; gap: 10px; }
+.nav.is-open .lang__code { display: inline; }
+.nav.is-open .lang .chev { display: block; margin-left: auto; }
+.nav.is-open .lang__menu { top: auto; bottom: calc(100% + 8px); left: 0; right: 0; }
+.btn--primary:hover { background: var(--cta-hover); }
+:focus-visible { outline-color: var(--color-focus); }
+.ground-inverse :focus-visible { outline-color: #fff; }
+.section-head h2 { font-weight: 700; }
+.section-head h2 .muted { font-weight: 300; }
+h1, h2, h3 { hyphens: auto; overflow-wrap: break-word; }
+
+/* ---- the layout after meruatelier.cz: ruled heads, staggered work, ruled cells, an amber band, a footer with the logo ---- */
+main > section.x-sec.x-sec { position: relative; display: block; height: auto; min-height: 0; padding: var(--s-10) 0 var(--s-9); overflow: hidden; }
+.x-sec > .wrap { position: relative; z-index: 1; }
+.x-lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; fill: none; stroke: currentColor; stroke-width: 1; opacity: .2; }
+.x-lines path { vector-effect: non-scaling-stroke; }
+.x-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-5); padding: var(--s-4) 0; margin-bottom: var(--s-8); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.x-head h2 { margin: 0; max-width: none; font-size: clamp(24px, 2.9vw, 40px); font-weight: 700; letter-spacing: -0.03em; }
+.x-head h2 .muted { font-weight: 300; }
+.x-head .link { flex: none; font-weight: 500; }
+.x-warm { background: var(--p-surface); }
+.x-amber { background: var(--band-bg); --bg: var(--band-bg); --ink: var(--band-ink); --muted: var(--band-muted); --line: var(--band-line); --line-strong: var(--band-line-strong); color: var(--ink); }
+.x-amber--cont { padding-top: 0 !important; }
+
+.x-navy { background: var(--dark-bg); --bg: var(--dark-bg); --ink: #fff; --muted: #aab7c3; --line: rgb(255 255 255 / .18); --line-strong: rgb(255 255 255 / .55); color: var(--ink); }
+
+/* work: two columns, the right one lower */
+.x-proj-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-8) var(--s-6); align-items: start; }
+.x-proj:nth-child(even) { margin-top: clamp(40px, 9vw, 140px); }
+.x-proj__img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--p-surface); }
+.x-proj__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease); }
+.x-proj:hover .x-proj__img img { transform: scale(1.03); }
+.x-proj h3 { margin: var(--s-3) 0 var(--s-1); font: 600 clamp(15px, 1.5vw, 19px)/1.25 var(--font-display); letter-spacing: -0.01em; }
+.x-proj p { margin: 0; font-size: clamp(13px, 1.1vw, 15px); line-height: 1.45; color: var(--muted); max-width: 44ch; }
+
+/* ruled cells: one grid, hairlines made by the gap */
+.x-cells { display: grid; gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
+.x-cells--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.x-cells--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.x-cell { background: var(--bg); color: var(--ink); display: flex; flex-direction: column; gap: var(--s-3); padding: var(--s-6); min-width: 0; text-decoration: none; }
+.x-cell__ic { width: 64px; height: 64px; margin-bottom: var(--s-6); fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.x-cell h3 { margin: 0; font: 600 clamp(17px, 1.5vw, 21px)/1.25 var(--font-display); letter-spacing: -0.01em; }
+.x-cell p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink); max-width: 36ch; }
+.x-cell > .x-cell__img, .x-cell > .cert__doc { margin: calc(-1 * var(--s-6)) calc(-1 * var(--s-6)) var(--s-3); }
+.x-cell__img { aspect-ratio: 4 / 3; overflow: hidden; }
+.x-cell__img img { width: 100%; height: 100%; object-fit: cover; }
+.x-cell__body { display: grid; gap: var(--s-2); }
+.x-cell .cert__doc { border-radius: 0; }
+.x-cell .cert__meta { color: var(--muted); font-size: 14px; }
+.x-cell .step-num { font: 600 13px/1 var(--font-text); letter-spacing: .04em; color: var(--muted); }
+.x-bigphoto { margin-top: var(--s-8); aspect-ratio: 21 / 9; overflow: hidden; }
+.x-bigphoto img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); }
+
+/* about */
+.x-statement { max-width: 24ch; margin: var(--s-9) auto var(--s-8); text-align: center; font: 600 clamp(28px, 4.2vw, 60px)/1.1 var(--font-display); letter-spacing: -0.035em; text-wrap: balance; }
+.x-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6); max-width: 860px; margin: 0 auto var(--s-9); }
+.x-two p { margin: 0; font-size: 16px; line-height: 1.55; max-width: none; }
+.x-clients { padding-top: var(--s-5); border-top: 1px solid var(--line-strong); }
+.x-clients__h { margin: 0 0 var(--s-4); font: 600 13px/1 var(--font-text); letter-spacing: .04em; text-transform: none; }
+.x-clients__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-4) var(--s-6); background: #fff; padding: var(--s-4) var(--s-6); }
+.x-logo { position: relative; flex: none; width: 160px; height: 56px; overflow: hidden; display: block; }
+.x-logo img { position: absolute; left: 0; top: 50%; width: 160px; height: 160px; max-width: none; transform: translateY(-50%); }
+
+/* footer */
+.x-foot { position: relative; overflow: hidden; background: var(--p-surface); color: var(--color-brand-navy); --ink: var(--color-brand-navy); --muted: #55595d; --line-strong: rgb(31 45 59 / .7); padding: var(--s-10) 0 var(--s-7); }
+.x-foot > .wrap { position: relative; z-index: 1; }
+.x-foot__top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-8); align-items: end; padding-bottom: var(--s-9); }
+.x-foot__logo { display: block; width: 100%; max-width: 720px; height: auto; }
+.x-foot__ask h2 { margin: 0 0 var(--s-3); font: 700 clamp(22px, 2.2vw, 30px)/1.15 var(--font-display); letter-spacing: -0.02em; }
+.x-foot__ask p { margin: 0 0 var(--s-5); font-size: 16px; }
+.x-tags { list-style: none; margin: var(--s-6) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.x-tags li { margin: 0; padding: 8px 12px; border: 1px solid var(--line-strong); font: 600 12px/1 var(--font-text); letter-spacing: .06em; text-transform: uppercase; }
+.x-foot__bottom { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--s-6); padding-top: var(--s-5); border-top: 1px solid var(--line-strong); font-size: 14px; }
+.x-foot__bottom p { margin: 0; max-width: 40ch; }
+.x-foot__links { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.x-foot__links li { margin: 0; padding: 0; }
+.x-foot__links a { text-decoration: none; font-weight: 500; }
+.x-foot__links a:hover { text-decoration: underline; }
+.x-foot__legal { color: var(--muted); }
+
+@media (max-width: 1023px) {
+  .x-cells--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .x-foot__top { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 639px) {
+  main > section.x-sec.x-sec { padding: var(--s-9) 0 var(--s-8); }
+  .x-head { flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-6); }
+  .x-proj-grid { gap: var(--s-6) var(--s-3); }
+  .x-proj:nth-child(even) { margin-top: 48px; }
+  .x-cells--3 { grid-template-columns: minmax(0, 1fr); }
+  .x-cell { padding: var(--s-4); }
+  .x-cell > .x-cell__img, .x-cell > .cert__doc { margin: calc(-1 * var(--s-4)) calc(-1 * var(--s-4)) var(--s-3); }
+  .x-cell__ic { width: 48px; height: 48px; margin-bottom: var(--s-4); }
+  .x-bigphoto { aspect-ratio: 4 / 3; }
+  .x-statement { margin: var(--s-8) auto var(--s-6); }
+  .x-two { grid-template-columns: minmax(0, 1fr); margin-bottom: var(--s-7); }
+  .x-clients__row { justify-content: center; }
+  .x-foot__bottom { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* floating call-to-action */
+.fab { position: fixed; right: 24px; bottom: 24px; z-index: 40; width: min(400px, calc(100vw - 32px)); }
+.fab[hidden] { display: none; }
+.fab__card { display: flex; align-items: center; gap: var(--s-4); padding: var(--s-4) var(--s-6) var(--s-4) var(--s-4); background: var(--color-brand-navy); color: #fff; border-radius: 20px; text-decoration: none;
+  box-shadow: 0 2px 6px rgb(11 24 34 / .18), 0 18px 40px -14px rgb(11 24 34 / .45); transition: transform 250ms var(--ease); }
+.fab__card:hover { transform: translateY(-2px); }
+.fab__img { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #fff; }
+.fab__text { display: grid; gap: var(--s-2); min-width: 0; }
+.fab__msg { font: 500 14px/1.4 var(--font-text); color: #fff; }
+.fab__cta { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--font-text); color: #7fd3e6; }
+.fab__close { position: absolute; top: -10px; right: -6px; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid rgb(255 255 255 / .35); background: var(--color-brand-navy); color: #fff; cursor: pointer; }
+.fab__close:hover { background: var(--color-brand-primary); }
+@media (max-width: 639px) { .fab { right: 16px; bottom: 16px; } .fab__card { padding: var(--s-3) var(--s-5) var(--s-3) var(--s-3); gap: var(--s-3); } .fab__img { width: 48px; height: 48px; } .fab__msg { font-size: 13px; } }
+@media print { .fab { display: none; } }
+
+/* themes, tried with ?theme=... : the band, the buttons and the dark section */
+html[data-theme="warm"] { --cta-bg: var(--color-brand-primary); --cta-hover: #005f74; --band-bg: var(--color-bg-warm); --band-ink: var(--color-brand-navy); --band-muted: #55595d; --band-line: rgb(31 45 59 / .2); --band-line-strong: rgb(31 45 59 / .8); }
+html[data-theme="navy"] { --cta-bg: var(--color-brand-primary); --cta-hover: #005f74; --band-bg: var(--color-brand-navy); --band-muted: rgb(255 255 255 / .75); --dark-bg: var(--color-brand-primary); }
+html[data-theme="ice"] { --cta-bg: var(--color-brand-primary); --cta-hover: #005f74; --band-bg: #d9ebef; --band-ink: var(--color-brand-navy); --band-muted: #46606a; --band-line: rgb(31 45 59 / .2); --band-line-strong: rgb(31 45 59 / .8); }
+html[data-theme="amber"] { --cta-bg: #FFB547; --cta-ink: #1F2D3B; --cta-hover: #F5A623; --band-bg: #FFB547; --band-ink: #1F2D3B; --band-muted: #4a4a3f; --band-line: rgb(31 45 59 / .22); --band-line-strong: rgb(31 45 59 / .85); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="flag-cs" viewBox="0 0 24 16"><rect width="24" height="8" fill="#fff"/><rect y="8" width="24" height="8" fill="#d7141a"/><path d="M0 0 12 8 0 16Z" fill="#11457e"/></symbol>
+  <symbol id="flag-en" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0V40M0 20H60" stroke="#fff" stroke-width="12"/><path d="M30 0V40M0 20H60" stroke="#c8102e" stroke-width="7"/></symbol>
+  <symbol id="flag-de" viewBox="0 0 24 16"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="nav__logo" href="#top" aria-label="NADE, začátek stránky"><img src="img/nade.png" alt="NADE" width="97" height="24"></a>
+    <nav class="nav__links" aria-label="Hlavní navigace">
+      <div class="nav__item"><a class="nav__link" href="#work">Realizace</a></div>
+      <div class="nav__item"><a class="nav__link" href="#capabilities">Výroba</a></div>
+      <div class="nav__item"><a class="nav__link" href="#about">O nás</a></div>
+      <div class="nav__item"><a class="nav__link" href="#quality">Kvalita</a></div>
+      <div class="nav__item"><a class="nav__link" href="#process">Postup</a></div>
+    </nav>
+    <div class="nav__actions">
+      <div class="lang" data-lang-switch>
+        <button class="lang__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Jazyk">
+          <svg class="flag" aria-hidden="true"><use href="#flag-cs"/></svg><span class="lang__code">CZ</span>
+          <svg class="chev" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang__menu" role="listbox" aria-label="Jazyk" hidden>
+          <li><button type="button" role="option" data-lang="cs" aria-selected="true"><svg class="flag" aria-hidden="true"><use href="#flag-cs"/></svg>Čeština</button></li>
+          <li><button type="button" role="option" data-lang="en" aria-selected="false"><svg class="flag" aria-hidden="true"><use href="#flag-en"/></svg>English</button></li>
+          <li><button type="button" role="option" data-lang="de" aria-selected="false"><svg class="flag" aria-hidden="true"><use href="#flag-de"/></svg>Deutsch</button></li>
+        </ul>
+      </div>
+      <a class="btn btn--primary" href="#enquiry">Poslat výkresy<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Nabídka">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO: the claim with the blue logo tile, what we make as pills, the customers, then the weld on video -->
+  <section class="hero-x" aria-labelledby="hero-h">
+    <div class="wrap">
+      <h1 id="hero-h" class="hero-x__h">
+        <span class="h1-bold">Svařované sestavy</span>
+        <span class="h1-tile" aria-hidden="true"><img src="img/nade-white.png" alt="" width="881" height="217"></span>
+        <span class="h1-light">pro železnici</span>
+      </h1>
+      <ul class="pills">
+        <li><a class="hchip" href="#capabilities"><span class="hchip__ic hchip__ic--a"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4.5h11v8h-11zM2.5 7.5h11M6 4.5v3"/></svg></span>Skříně a bateriové boxy</a></li>
+        <li><a class="hchip" href="#capabilities"><span class="hchip__ic hchip__ic--b"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4"/><path d="M8 1.8v2.2M8 12v2.2M1.8 8H4M12 8h2.2M3.6 3.6l1.5 1.5M10.9 10.9l1.5 1.5M12.4 3.6l-1.5 1.5M5.1 10.9l-1.5 1.5"/></svg></span>CNC obrábění</a></li>
+        <li><a class="hchip" href="#capabilities"><span class="hchip__ic hchip__ic--c"><svg viewBox="0 0 16 16" aria-hidden="true" class="fill"><path d="M9.2 1.8 3.6 9h3.7l-.9 5.2L12.4 7H8.7z"/></svg></span>Řezání laserem a ohýbání</a></li>
+        <li><a class="hchip" href="#quality"><span class="hchip__ic hchip__ic--d"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5 6.6 11.6 12.6 4.6"/></svg></span>ISO 3834-2 do roku 2028</a></li>
+      </ul>
+      <div class="btn-row hero-x__cta">
+        <a class="btn btn--primary" href="#enquiry">Poslat výkresy<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+        <a class="btn btn--secondary" href="#quality">Zobrazit certifikáty</a>
+      </div>
+      <div class="logo-bar" data-logo-bar aria-label="Zákazníci">
+        <div class="logo-bar__view">
+          <div class="logo-bar__track">
+            <span class="logo-bar__item"><img src="img/c-cd.png" alt="České dráhy" width="176" height="176"></span>
+            <span class="logo-bar__item"><img src="img/c-skoda.png" alt="Škoda" width="176" height="176"></span>
+            <span class="logo-bar__item"><img src="img/c-zos.png" alt="ŽOS Trnava" width="176" height="176"></span>
+            <span class="logo-bar__item"><img src="img/c-elektroline.png" alt="Elektroline" width="176" height="176"></span>
+            <span class="logo-bar__item"><img src="img/c-ekoslide.png" alt="Ekoslide" width="176" height="176"></span>
+            <span class="logo-bar__item" aria-hidden="true"><img src="img/c-cd.png" alt="" width="176" height="176"></span>
+            <span class="logo-bar__item" aria-hidden="true"><img src="img/c-skoda.png" alt="" width="176" height="176"></span>
+            <span class="logo-bar__item" aria-hidden="true"><img src="img/c-zos.png" alt="" width="176" height="176"></span>
+            <span class="logo-bar__item" aria-hidden="true"><img src="img/c-elektroline.png" alt="" width="176" height="176"></span>
+            <span class="logo-bar__item" aria-hidden="true"><img src="img/c-ekoslide.png" alt="" width="176" height="176"></span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-x__media">
+        <video class="hero-x__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+          <source src="video/hero-loop-1080.webm" type="video/webm">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. REALIZACE: two staggered columns of work, as on the reference -->
+  <section class="x-sec" id="work" aria-labelledby="work-h">
+    <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 92 L100 58 M0 34 L100 4 M38 100 L100 78"/></svg>
+    <div class="wrap">
+      <div class="x-head"><h2 id="work-h">Realizace. <span class="muted">Díly vyrobené podle výkresů zákazníků.</span></h2><a class="link" href="#enquiry">Poslat výkresy</a></div>
+      <div class="x-proj-grid">
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-frame.jpg" alt="Svařovaný a nýtovaný hliníkový rám na podlaze dílny" loading="lazy"></div>
+          <h3>Nýtovaný hliníkový rám</h3>
+          <p>Otevřený rám z hliníkových profilů spojených nýty.</p>
+        </article>
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-cabinet.jpg" alt="Ocelová skříň se dvěma hrdly na horní straně" loading="lazy"></div>
+          <h3>Skříň pro elektrické komponenty</h3>
+          <p>Plechová skříň pro usazení elektrických komponent.</p>
+        </article>
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-roller.jpg" alt="Zakřivené ocelové lopatky nástavce silničního válce v modrém světle" loading="lazy"></div>
+          <h3>Nástavec silničního válce</h3>
+          <p>Nástavec pro úpravu povrchů vyrobený podle výkresu zákazníka.</p>
+        </article>
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-port.jpg" alt="Závitový otvor označený M25x1,5 v ocelové stěně" loading="lazy"></div>
+          <h3>Závitový otvor</h3>
+          <p>Závit M25x1,5 vyřezaný do ocelové stěny.</p>
+        </article>
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-plates.jpg" alt="Stoh zakřivených ocelových segmentů vyřezaných z plechu" loading="lazy"></div>
+          <h3>Řezané ocelové segmenty</h3>
+          <p>Obloukové díly vyřezané z plechu.</p>
+        </article>
+        <article class="x-proj">
+          <div class="x-proj__img"><img src="img/work-weld.jpg" alt="Svarová housenka na ocelové konstrukci, makro záběr" loading="lazy"></div>
+          <h3>Detail svarového spoje</h3>
+          <p>Svar na ocelové konstrukci z blízka.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. VÝROBA: the amber band, four ruled cells and one large photograph -->
+  <section class="x-sec x-amber" id="capabilities" aria-labelledby="cap-h">
+    <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 100 L100 46 M0 52 L100 0"/></svg>
+    <div class="wrap">
+      <div class="x-head"><h2 id="cap-h">Co vyrábíme. <span class="muted">Svařované sestavy na prvním místě.</span></h2></div>
+      <div class="x-cells x-cells--4">
+        <article class="x-cell">
+          <svg class="x-cell__ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 14h48v36H8zM8 32h48M32 14v36M8 50 32 32 56 14"/></svg>
+          <h3>Svařované sestavy</h3>
+          <p>Rámy, skříně a konstrukce podle vašeho výkresu.</p>
+        </article>
+        <article class="x-cell">
+          <svg class="x-cell__ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 22 32 10l22 12v24L32 58 10 46zM10 22l22 12 22-12M32 34v24"/></svg>
+          <h3>Skříně a bateriové boxy</h3>
+          <p>Vyvíjíme a vyrábíme pro kolejová vozidla, od prototypu po sérii.</p>
+        </article>
+        <article class="x-cell">
+          <svg class="x-cell__ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="10"/><path d="M32 6v10M32 48v10M6 32h10M48 32h10M13.6 13.6l7 7M43.4 43.4l7 7M50.4 13.6l-7 7M20.6 43.4l-7 7"/></svg>
+          <h3>CNC obrábění</h3>
+          <p>Soustružení a frézování dílů a svařovaných komponent.</p>
+        </article>
+        <article class="x-cell">
+          <svg class="x-cell__ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M37 5 13 37h17l-4 22 25-33H34z"/></svg>
+          <h3>Řezání laserem a ohýbání</h3>
+          <p>CNC laser a ohraňovací lisy pro díly kolem svaru.</p>
+        </article>
+      </div>
+      <div class="x-bigphoto"><img src="img/step-3.jpg" alt="Svářeč v masce při práci ve spršce jisker" style="--pos: 50% 38%" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- 4. O NÁS: one large statement, two short columns, the customers -->
+  <section class="x-sec x-amber x-amber--cont" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="x-head"><h2 id="about-h">O nás</h2></div>
+      <p class="x-statement">Stavíme na lidech, technické zkušenosti, kvalitě a dlouhodobé spolupráci.</p>
+      <div class="x-two">
+        <p>NADE, s.r.o. je česká strojírenská firma. Vyrábíme obráběné díly a svařované sestavy, významnou část tvoří komponenty pro kolejová vozidla.</p>
+        <p>Pracujeme v Krásnu a Horním Slavkově v západních Čechách. Jednatelkou je Uta Nádeníčková.</p>
+      </div>
+      <div class="x-clients"><p class="x-clients__h">Naši zákazníci</p><div class="x-clients__row"><span class="x-logo"><img src="img/c-cd.png" alt="České dráhy" width="160" height="160" loading="lazy"></span><span class="x-logo"><img src="img/c-skoda.png" alt="Škoda" width="160" height="160" loading="lazy"></span><span class="x-logo"><img src="img/c-zos.png" alt="ŽOS Trnava" width="160" height="160" loading="lazy"></span><span class="x-logo"><img src="img/c-elektroline.png" alt="Elektroline" width="160" height="160" loading="lazy"></span><span class="x-logo"><img src="img/c-ekoslide.png" alt="Ekoslide" width="160" height="160" loading="lazy"></span></div></div>
+    </div>
+  </section>
+
+  <!-- 5. KVALITA: the navy band, three ruled cells -->
+  <section class="x-sec x-navy" id="quality" aria-labelledby="q-h">
+    <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 100 L100 40 M42 100 L100 68"/></svg>
+    <div class="wrap">
+      <div class="x-head"><h2 id="q-h">Certifikovaná kvalita. <span class="muted">Aktuální certifikáty k nahlédnutí.</span></h2></div>
+      <div class="x-cells x-cells--3">
+        <a class="x-cell cert" href="certifikaty-a-dokumenty/csn-iso-3834-2_2022-cz-platnost-do-12-9-2028-1_-f90c4047.jpg">
+          <div class="cert__doc"><img src="img/cert-iso3834.jpg" alt="Certifikát ISO 3834-2" loading="lazy"></div>
+          <div class="x-cell__body"><h3>ISO 3834-2</h3><p class="cert__meta">Požadavky na kvalitu při tavném svařování. Platné do 12. září 2028.</p></div>
+        </a>
+        <a class="x-cell cert" href="certifikaty-a-dokumenty/iso-9001-2015-cz-platnost-do-6-9-2027-1_-b8235521.jpg">
+          <div class="cert__doc"><img src="img/cert-iso9001.jpg" alt="Certifikát ISO 9001:2015" loading="lazy"></div>
+          <div class="x-cell__body"><h3>ISO 9001:2015</h3><p class="cert__meta">Systém managementu kvality. Platné do 6. září 2027.</p></div>
+        </a>
+        <a class="x-cell cert" href="certifikaty-a-dokumenty/cd-v6_2-osvedceni-o-zpusobolosti-dodavatele---platnost-do-31-1-2027-1_-b1903a66.jpg">
+          <div class="cert__doc"><img src="img/cert-cd.jpg" alt="Osvědčení o způsobilosti dodavatele Českých drah" loading="lazy"></div>
+          <div class="x-cell__body"><h3>Schválení dodavatele Českých drah</h3><p class="cert__meta">Osvědčení o způsobilosti dodavatele. Platné do 31. ledna 2027.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. POSTUP: three ruled cells with a photograph each -->
+  <section class="x-sec" id="process" aria-labelledby="proc-h">
+    <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 70 L100 16 M54 100 L100 74"/></svg>
+    <div class="wrap">
+      <div class="x-head"><h2 id="proc-h">Od výkresu k dodávce ve 3 krocích.</h2></div>
+      <div class="x-cells x-cells--3">
+        <article class="x-cell">
+          <div class="x-cell__img"><img src="img/step-1.jpg" alt="Technický výkres plechového dílu s kótami" loading="lazy"></div>
+          <div class="x-cell__body"><span class="step-num">01</span><h3>Pošlete výkresy</h3><p>Uveďte množství, materiál a požadovanou normu.</p></div>
+        </article>
+        <article class="x-cell">
+          <div class="x-cell__img"><img src="img/step-2.jpg" alt="Vytištěné výkresy a pravítko na svářecím stole" loading="lazy"></div>
+          <div class="x-cell__body"><span class="step-num">02</span><h3>Posoudíme a nacením</h3><p>Náš tým výkres zkontroluje a odpoví nabídkou.</p></div>
+        </article>
+        <article class="x-cell">
+          <div class="x-cell__img"><img src="img/step-3b.jpg" alt="Ruce svářeče při práci na ocelové skříni" loading="lazy"></div>
+          <div class="x-cell__body"><span class="step-num">03</span><h3>Vyrobíme a zkontrolujeme</h3><p>Svařování, obrábění, kontrola a dodávka.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. POPTÁVKA -->
+  <section class="x-sec x-warm" id="enquiry" aria-labelledby="enq-h">
+    <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 100 L100 52 M0 44 L100 0"/></svg>
+    <div class="wrap">
+      <div class="x-head"><h2 id="enq-h">Pošlete nám výkresy. <span class="muted">Odpovíme nabídkou.</span></h2></div>
+      <div class="grid grid--top">
+        <div class="span-5">
+          <ul class="rows rows--spec">
+            <li><span class="rows__name">Výkresy</span><span class="rows__value">PDF nebo CAD soubory</span></li>
+            <li><span class="rows__name">Množství</span><span class="rows__value">Prototyp nebo série</span></li>
+            <li><span class="rows__name">Norma</span><span class="rows__value">Například EN 15085</span></li>
+          </ul>
+          <div class="side-photo"><img src="img/enquiry.jpg" alt="Malá destička s označením NADE na dílenském stole" loading="lazy"></div>
+        </div>
+        <div class="span-6 start-7 enquiry-form">
+          <form class="form" method="post" action="https://enquiries.nade.example/send" enctype="multipart/form-data" novalidate>
+            <label class="field"><span>Jméno</span><input type="text" name="name" autocomplete="name" required></label>
+            <label class="field"><span>Firma</span><input type="text" name="company" autocomplete="organization" required></label>
+            <label class="field"><span>Pracovní e-mail</span><input type="email" name="email" autocomplete="email" required></label>
+            <label class="field"><span>Norma nebo certifikace</span><input type="text" name="standard" placeholder="EN 15085"></label>
+            <label class="field field--full"><span>Co potřebujete vyrobit?</span><textarea name="details" required></textarea></label>
+            <label class="field field--full"><span>Výkresy</span><input type="file" name="drawings" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.zip"></label>
+            <div class="btn-row">
+              <button class="btn btn--primary" type="submit">Poslat výkresy<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></button>
+            </div>
+            <p class="note" data-form-status role="status">Každou poptávku čteme a odpovídáme dalším postupem.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 8. PATA: the logo set large, the ask, the links -->
+<footer class="x-foot" id="contact" aria-labelledby="close-h">
+  <svg class="x-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 100 L100 30 M0 56 L100 0 M46 100 L100 62"/></svg>
+  <div class="wrap">
+    <div class="x-foot__top">
+      <img class="x-foot__logo" src="img/nade.png" alt="NADE" width="1225" height="303">
+      <div class="x-foot__ask">
+        <h2 id="close-h">Máte výkres? Pošlete nám ho.</h2>
+        <p>Odpovíme technickým posouzením a nabídkou.</p>
+        <a class="btn btn--primary" href="#enquiry">Poslat výkresy<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+        <ul class="x-tags"><li>Svařované sestavy</li><li>Skříně a bateriové boxy</li><li>CNC obrábění</li></ul>
+      </div>
+    </div>
+    <div class="x-foot__bottom">
+      <p class="x-foot__lede">Svařované sestavy, skříně a obráběné díly pro železnici. Krásno, Česká republika.</p>
+      <ul class="x-foot__links"><li><a href="#work">Realizace</a></li><li><a href="#capabilities">Výroba</a></li><li><a href="#about">O nás</a></li><li><a href="#quality">Kvalita</a></li><li><a href="#process">Postup</a></li></ul>
+      <p class="x-foot__legal">&copy; 2026 NADE, s.r.o.<br>Názvy produktů a loga jsou ochranné známky jejich vlastníků.</p>
+    </div>
+  </div>
+</footer>
+
+<aside class="fab" data-fab aria-label="Matěj Boška">
+  <a class="fab__card" href="https://calendly.com/matej0boska/30min" target="_blank" rel="noopener">
+    <img class="fab__img" src="img/matej.jpg" alt="Matěj Boška" width="56" height="56">
+    <span class="fab__text">
+      <span class="fab__msg">Zaujal Vás můj návrh? Není kompletní a chci aby pro Vás pracoval, pojďme se o tom pobavit!</span>
+      <span class="fab__cta">Domluvit hovor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
+    </span>
+  </a>
+  <button class="fab__close" type="button" aria-label="Zavřít"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script>
+(function () {
+  // texts: Czech is the page's own text; this table holds the other two languages, keyed by the Czech string
+  var D = {"pro železnici": {"en": "for rail", "de": "für die Bahn"}, "ISO 3834-2 do roku 2028": {"en": "ISO 3834-2 until 2028", "de": "ISO 3834-2 bis 2028"}, "NADE vyrábí v Krásnu svařované sestavy, skříně a CNC obráběné díly pro kolejová vozidla. Pošlete výkres a získáte technické posouzení.": {"en": "NADE builds welded assemblies, cabinets and CNC-machined parts for rail vehicles in Krásno, Czech Republic. Send a drawing and get a technical review.", "de": "NADE fertigt in Krásno (Tschechien) Schweißbaugruppen, Gehäuse und CNC-gefertigte Teile für Schienenfahrzeuge. Zeichnung senden und technische Prüfung erhalten."}, "Český výrobce svařovaných sestav, skříní a CNC obráběných dílů pro kolejová vozidla. Certifikace ISO 3834-2 platná do roku 2028.": {"en": "Czech manufacturer of welded assemblies, cabinets and CNC-machined parts for rail vehicles. ISO 3834-2 certified until 2028.", "de": "Tschechischer Hersteller von Schweißbaugruppen, Gehäusen und CNC-gefertigten Teilen für Schienenfahrzeuge. Zertifiziert nach ISO 3834-2, gültig bis 2028."}, "Mapa Česka s Krásnem na západě a vzdálenostmi vzdušnou čarou do Prahy, Drážďan, Norimberku, Mnichova a Vídně": {"en": "Map of Czechia with Krásno marked in the west, and straight-line distances to Prague, Dresden, Nuremberg, Munich and Vienna", "de": "Karte Tschechiens mit Krásno im Westen und Luftlinienentfernungen nach Prag, Dresden, Nürnberg, München und Wien"}, "Ruka svářeče vede hořák podél ocelového přípravku, ze svaru stoupají jiskry": {"en": "A welder's hand guiding a torch along a steel fixture, sparks rising from the weld", "de": "Die Hand eines Schweißers führt einen Brenner an einer Stahlvorrichtung entlang, Funken steigen aus der Naht auf"}, "Svařované sestavy, skříně a obráběné díly pro železnici. Krásno, Česká republika.": {"en": "Welded assemblies, cabinets and machined parts for rail. Krásno, Czech Republic.", "de": "Schweißbaugruppen, Gehäuse und Bearbeitungsteile für die Bahn. Krásno, Tschechische Republik."}, "Výrobní hala NADE s laserovým řezacím strojem a dlouhou betonovou podlahou": {"en": "The NADE workshop hall with a laser cutting machine and a long concrete floor", "de": "Die NADE-Werkhalle mit einer Laserschneidmaschine und langem Betonboden"}, "Požadavky na kvalitu při tavném svařování. Platné do 12. září 2028.": {"en": "Quality requirements for fusion welding. Valid until 12 September 2028.", "de": "Qualitätsanforderungen an das Schmelzschweißen. Gültig bis 12. September 2028."}, "Svářeč pracuje na velkém ocelovém tělese na děrovaném svářecím stole": {"en": "A welder working on a large steel body at a perforated welding table", "de": "Ein Schweißer arbeitet an einem großen Stahlkörper auf einem Lochrasterschweißtisch"}, "Malá destička s označením NADE na dílenském stole": {"en": "A small plate stamped with the NADE name lying on a workshop bench", "de": "Ein kleines Schild mit dem Namen NADE auf einer Werkbank"}, "Vyplňte prosím jméno, firmu, e-mail a co potřebujete vyrobit.": {"en": "Please fill in your name, company, email and what you need built.", "de": "Bitte geben Sie Name, Firma, E-Mail und Ihren Bedarf an."}, "Osvědčení o způsobilosti dodavatele. Platné do 31. ledna 2027.": {"en": "Certificate of supplier competence. Valid until 31 January 2027.", "de": "Nachweis der Lieferantenkompetenz. Gültig bis 31. Januar 2027."}, "Nástavec pro úpravu povrchů vyrobený podle výkresu zákazníka.": {"en": "A surface-finishing attachment built to the customer's drawing.", "de": "Ein Anbaugerät zur Oberflächenbearbeitung nach Zeichnung des Kunden."}, "Svářeč skloněný nad ocelovou skříní se dvěma přírubovými otvory": {"en": "A welder bent over a steel cabinet with two flanged openings", "de": "Ein Schweißer über einen Stahlschrank mit zwei Flanschöffnungen gebeugt"}, "Zakřivené ocelové lopatky nástavce silničního válce v modrém světle": {"en": "Curved steel blades of a road roller attachment, lit in blue", "de": "Gebogene Stahlschaufeln eines Walzenanbaugeräts im blauen Licht"}, "Vyvíjíme a vyrábíme pro kolejová vozidla, od prototypu po sérii.": {"en": "Developed and built for rail vehicles, prototype to series.", "de": "Für Schienenfahrzeuge entwickelt und gefertigt, vom Prototyp bis zur Serie."}, "Svařovaný a nýtovaný hliníkový rám na podlaze dílny": {"en": "A welded and riveted aluminium frame on the workshop floor", "de": "Ein geschweißter und genieteter Aluminiumrahmen auf dem Werkstattboden"}, "CNC laser a ohraňovací lisy pro díly kolem svaru.": {"en": "CNC laser and press brakes for the parts around the weld.", "de": "CNC-Laser und Abkantpressen für die Teile rund um die Schweißnaht."}, "Technický výkres plechového dílu s kótami": {"en": "A technical drawing of a sheet-metal part with dimensions", "de": "Eine technische Zeichnung eines Blechteils mit Maßen"}, "Otevřený rám z hliníkových profilů spojených nýty.": {"en": "An open frame of aluminium sections, joined with rivets.", "de": "Ein offener Rahmen aus Aluminiumprofilen, mit Nieten verbunden."}, "Systém managementu kvality. Platné do 6. září 2027.": {"en": "Quality management system. Valid until 6 September 2027.", "de": "Qualitätsmanagementsystem. Gültig bis 6. September 2027."}, "Stůl CNC laseru při řezání děrovaného ocelového plechu": {"en": "The bed of a CNC laser cutting a perforated steel sheet", "de": "Das Bett eines CNC-Lasers beim Schneiden eines gelochten Stahlblechs"}, "Plechová skříň pro usazení elektrických komponent.": {"en": "A sheet-metal housing that seats electrical components.", "de": "Ein Blechgehäuse zur Aufnahme elektrischer Komponenten."}, "Názvy produktů a loga jsou ochranné známky jejich vlastníků.": {"en": "Product names and logos are trademarks of their owners.", "de": "Produktnamen und Logos sind Marken ihrer jeweiligen Inhaber."}, "Rámy, skříně a konstrukce podle vašeho výkresu.": {"en": "Frames, housings and structures built to your drawing.", "de": "Rahmen, Gehäuse und Konstruktionen nach Ihrer Zeichnung."}, "Vytištěné výkresy a pravítko na svářecím stole": {"en": "Printed drawings and a ruler lying on a welding table", "de": "Ausgedruckte Zeichnungen und ein Lineal auf einem Schweißtisch"}, "Náš tým výkres zkontroluje a odpoví nabídkou.": {"en": "Our team checks the drawing and replies with a quote.", "de": "Unser Team prüft die Zeichnung und antwortet mit einem Angebot."}, "Každou poptávku čteme a odpovídáme dalším postupem.": {"en": "We read every enquiry and answer with the next steps.", "de": "Wir lesen jede Anfrage und antworten mit den nächsten Schritten."}, "NADE: svařované sestavy pro železnici, vyrobeno v Česku": {"en": "NADE: welded assemblies for rail, made in Czechia", "de": "NADE: Schweißbaugruppen für die Bahn, hergestellt in Tschechien"}, "Soustružení a frézování dílů a svařovaných komponent.": {"en": "Turning and milling of parts and weld components.", "de": "Drehen und Fräsen von Teilen und Schweißkomponenten."}, "Uveďte množství, materiál a požadovanou normu.": {"en": "Add quantity, material and the standard you need.", "de": "Geben Sie Menge, Material und die gewünschte Norm an."}, "Svářeč v masce při práci ve spršce jisker": {"en": "A welder in a mask working in a shower of sparks", "de": "Ein Schweißer mit Maske bei der Arbeit im Funkenregen"}, "Páka a stůl ruční frézky": {"en": "The lever and table of a manual milling machine", "de": "Hebel und Tisch einer manuellen Fräsmaschine"}, "Ocelová skříň se dvěma hrdly na horní straně": {"en": "A steel cabinet with two pipe stubs on its top", "de": "Ein Stahlschrank mit zwei Rohrstutzen auf der Oberseite"}, "Závitový otvor označený M25x1,5 v ocelové stěně": {"en": "A threaded port marked M25x1.5 in a steel wall", "de": "Ein Gewindeanschluss mit der Kennzeichnung M25x1,5 in einer Stahlwand"}, "Odpovíme technickým posouzením a nabídkou.": {"en": "We reply with a technical review and a quote.", "de": "Wir antworten mit einer technischen Prüfung und einem Angebot."}, "Svařování, obrábění, kontrola a dodávka.": {"en": "Welding, machining, inspection and delivery.", "de": "Schweißen, Bearbeiten, Prüfen und Liefern."}, "Osvědčení o způsobilosti dodavatele Českých drah": {"en": "České dráhy supplier competence certificate", "de": "Lieferantenzertifikat der České dráhy"}, "Závit M25x1,5 vyřezaný do ocelové stěny.": {"en": "An M25x1.5 thread cut into a steel wall.", "de": "Ein M25x1,5-Gewinde in einer Stahlwand."}, "Od výkresu k dodávce ve 3 krocích.": {"en": "From drawing to delivery in 3 steps.", "de": "Von der Zeichnung bis zur Lieferung in 3 Schritten."}, "Aktuální certifikáty k nahlédnutí.": {"en": "Current certificates, open to read.", "de": "Aktuelle Zertifikate zur Einsicht."}, "Díly vyrobené podle výkresů zákazníků.": {"en": "Parts built to customer drawings.", "de": "Teile nach Kundenzeichnungen gefertigt."}, "Západní Čechy, Česká republika.": {"en": "Western Bohemia, Czech Republic.", "de": "Westböhmen, Tschechische Republik."}, "Máte výkres? Pošlete nám ho.": {"en": "Have a drawing? Send it to us.", "de": "Sie haben eine Zeichnung? Schicken Sie sie uns."}, "Schválení dodavatele Českých drah": {"en": "České dráhy supplier approval", "de": "Lieferantenzulassung der České dráhy"}, "Skříň pro elektrické komponenty": {"en": "Cabinet for electrical parts", "de": "Schrank für Elektrokomponenten"}, "Svařované sestavy pro železnici": {"en": "Welded assemblies for rail", "de": "Schweißbaugruppen für die Bahn"}, "Skříně a bateriové boxy": {"en": "Cabinets and battery boxes", "de": "Schränke und Batteriekästen"}, "Řezání laserem a ohýbání": {"en": "Laser cutting and bending", "de": "Laserschneiden und Abkanten"}, "Certifikát ISO 9001:2015": {"en": "ISO 9001:2015 certificate", "de": "ISO-9001:2015-Zertifikat"}, "Norma nebo certifikace": {"en": "Standard or certification", "de": "Norm oder Zertifizierung"}, "Svařované sestavy na prvním místě.": {"en": "Welded assemblies first.", "de": "Schweißbaugruppen an erster Stelle."}, "Nýtovaný hliníkový rám": {"en": "Riveted aluminium frame", "de": "Genieteter Aluminiumrahmen"}, "Co potřebujete vyrobit?": {"en": "What do you need built?", "de": "Was sollen wir fertigen?"}, "Nástavec silničního válce": {"en": "Road roller attachment", "de": "Anbaugerät für Straßenwalze"}, "Certifikát ISO 3834-2": {"en": "ISO 3834-2 certificate", "de": "ISO-3834-2-Zertifikat"}, "Odpovíme nabídkou.": {"en": "We reply with a quote.", "de": "Wir antworten mit einem Angebot."}, "Vyrobíme a zkontrolujeme": {"en": "We build and inspect", "de": "Wir fertigen und prüfen"}, "Průmyslové firmy": {"en": "Industrial companies", "de": "Industrieunternehmen"}, "Například EN 15085": {"en": "For example EN 15085", "de": "Zum Beispiel EN 15085"}, "Posoudíme a nacením": {"en": "We review and quote", "de": "Wir prüfen und kalkulieren"}, "Pošlete nám výkresy.": {"en": "Send your drawings.", "de": "Senden Sie uns Ihre Zeichnungen."}, "Prototyp nebo série": {"en": "Prototype or series", "de": "Prototyp oder Serie"}, "Certifikovaná kvalita.": {"en": "Certified quality.", "de": "Zertifizierte Qualität."}, "Pošlete výkresy": {"en": "Send your drawings", "de": "Senden Sie Ihre Zeichnungen"}, "NADE, začátek stránky": {"en": "NADE, top of page", "de": "NADE, Seitenanfang"}, "Svařované sestavy": {"en": "Welded assemblies", "de": "Schweißbaugruppen"}, "Jednatelka": {"en": "Managing director", "de": "Geschäftsführerin"}, "Zobrazit certifikáty": {"en": "See certificates", "de": "Zertifikate ansehen"}, "PDF nebo CAD soubory": {"en": "PDF or CAD files", "de": "PDF- oder CAD-Dateien"}, "Vyrobeno v Krásnu.": {"en": "Made in Krásno.", "de": "Gefertigt in Krásno."}, "Poslat výkresy": {"en": "Send drawings", "de": "Zeichnungen senden"}, "Co vyrábíme.": {"en": "What we make.", "de": "Was wir fertigen."}, "CNC obrábění": {"en": "CNC machining", "de": "CNC-Bearbeitung"}, "Závitový otvor": {"en": "Threaded port", "de": "Gewindeanschluss"}, "Výroba": {"en": "Capabilities", "de": "Leistungen"}, "Realizace.": {"en": "Recent work.", "de": "Aktuelle Arbeiten."}, "Nástavec": {"en": "Attachment", "de": "Anbaugerät"}, "Pracovní e-mail": {"en": "Work email", "de": "Geschäftliche E-Mail"}, "Zákazníci": {"en": "Customers", "de": "Kunden"}, "Obráběno": {"en": "Machined", "de": "Bearbeitet"}, "Výkresy": {"en": "Drawings", "de": "Zeichnungen"}, "Množství": {"en": "Quantity", "de": "Menge"}, "Norma": {"en": "Standard", "de": "Norm"}, "Jazyk": {"en": "Language", "de": "Sprache"}, "Kvalita": {"en": "Quality", "de": "Qualität"}, "Postup": {"en": "Process", "de": "Ablauf"}, "Skříň": {"en": "Cabinet", "de": "Schrank"}, "Firma": {"en": "Company", "de": "Firma"}, "Provoz": {"en": "Plant", "de": "Standort"}, "Rám": {"en": "Frame", "de": "Rahmen"}, "Provozy": {"en": "Sites", "de": "Standorte"}, "Důvěra": {"en": "Trust", "de": "Vertrauen"}, "Objednávka": {"en": "Order", "de": "Bestellung"}, "Hlavní navigace": {"en": "Main", "de": "Hauptnavigation"}, "Nabídka": {"en": "Menu", "de": "Menü"}, "Realizace": {"en": "Work", "de": "Referenzen"}, "Jméno": {"en": "Name", "de": "Name"}, "Výrobky": {"en": "Make", "de": "Produkte"}, "O nás": {"en": "About us", "de": "Über uns"}, "Stavíme na lidech, technické zkušenosti, kvalitě a dlouhodobé spolupráci.": {"en": "We build on people, technical experience, quality and long-term partnerships.", "de": "Wir bauen auf Menschen, technische Erfahrung, Qualität und langfristige Partnerschaften."}, "NADE, s.r.o. je česká strojírenská firma. Vyrábíme obráběné díly a svařované sestavy, významnou část tvoří komponenty pro kolejová vozidla.": {"en": "NADE, s.r.o. is a Czech engineering company. We make machined parts and welded assemblies, and a large part of our work is components for rail vehicles.", "de": "NADE, s.r.o. ist ein tschechisches Maschinenbauunternehmen. Wir fertigen Bearbeitungsteile und Schweißbaugruppen, ein großer Teil davon sind Komponenten für Schienenfahrzeuge."}, "Pracujeme v Krásnu a Horním Slavkově v západních Čechách. Jednatelkou je Uta Nádeníčková.": {"en": "We work in Krásno and Horní Slavkov in western Bohemia. The managing director is Uta Nádeníčková.", "de": "Wir arbeiten in Krásno und Horní Slavkov in Westböhmen. Geschäftsführerin ist Uta Nádeníčková."}, "Naši zákazníci": {"en": "Our customers", "de": "Unsere Kunden"}, "Řezané ocelové segmenty": {"en": "Cut steel segments", "de": "Geschnittene Stahlsegmente"}, "Obloukové díly vyřezané z plechu.": {"en": "Curved parts cut from sheet metal.", "de": "Aus Blech geschnittene Bogenteile."}, "Stoh zakřivených ocelových segmentů vyřezaných z plechu": {"en": "A stack of curved steel segments cut from sheet metal", "de": "Ein Stapel gebogener, aus Blech geschnittener Stahlsegmente"}, "Detail svarového spoje": {"en": "Weld seam detail", "de": "Detail einer Schweißnaht"}, "Svar na ocelové konstrukci z blízka.": {"en": "A weld on a steel structure, up close.", "de": "Eine Schweißnaht an einer Stahlkonstruktion aus der Nähe."}, "Svarová housenka na ocelové konstrukci, makro záběr": {"en": "A weld bead on a steel structure, macro shot", "de": "Eine Schweißraupe an einer Stahlkonstruktion, Makroaufnahme"}, "Ruce svářeče při práci na ocelové skříni": {"en": "A welder's hands working on a steel housing", "de": "Hände eines Schweißers bei der Arbeit an einem Stahlgehäuse"}, "Zaujal Vás můj návrh? Není kompletní a chci aby pro Vás pracoval, pojďme se o tom pobavit!": {"en": "Did my design catch your eye? It is not complete, and I want it to work for you. Let's talk about it!", "de": "Hat Sie mein Entwurf angesprochen? Er ist nicht fertig, und ich möchte, dass er für Sie arbeitet. Lassen Sie uns darüber sprechen!"}, "Domluvit hovor": {"en": "Book a call", "de": "Gespräch vereinbaren"}, "Zavřít": {"en": "Close", "de": "Schließen"}};
+  var KEY = 'nade-lang', LANGS = { cs: 'CZ', en: 'EN', de: 'DE' }, cur = 'cs', items = [];
+  function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
+  function tx(cs, l) { if (l === 'cs') return cs; var e = D[norm(cs)]; return (e && e[l]) || cs; }
+  function collect() {
+    var w = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+      var p = n.parentNode && n.parentNode.nodeName;
+      if (p === 'SCRIPT' || p === 'STYLE' || p === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+      return D[norm(n.nodeValue)] ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP; } });
+    while (w.nextNode()) items.push({ n: w.currentNode, o: w.currentNode.nodeValue });
+    document.querySelectorAll('[alt], [aria-label], [placeholder], meta[name="description"]').forEach(function (el) {
+      ['alt', 'aria-label', 'placeholder', 'content'].forEach(function (a) {
+        if (el.hasAttribute(a) && D[norm(el.getAttribute(a))]) items.push({ el: el, a: a, o: el.getAttribute(a) });
+      });
+    });
+  }
+  function apply(l) {
+    items.forEach(function (it) {
+      if (it.n) { var lead = it.o.match(/^\s*/)[0], trail = it.o.match(/\s*$/)[0]; it.n.nodeValue = l === 'cs' ? it.o : lead + tx(it.o, l) + trail; }
+      else it.el.setAttribute(it.a, tx(it.o, l));
+    });
+  }
+  var sw = document.querySelector('[data-lang-switch]');
+  var btn = sw.querySelector('.lang__btn'), menu = sw.querySelector('.lang__menu');
+  function setOpen(o) { btn.setAttribute('aria-expanded', o ? 'true' : 'false'); menu.hidden = !o; }
+  function setLang(l, save) {
+    if (!LANGS[l]) l = 'cs';
+    cur = l; apply(l);
+    document.documentElement.lang = l;
+    btn.querySelector('use').setAttribute('href', '#flag-' + l);
+    btn.querySelector('.lang__code').textContent = LANGS[l];
+    sw.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
+    if (save) { try { localStorage.setItem(KEY, l); } catch (e) {} }
+  }
+  btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(menu.hidden); });
+  sw.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); setOpen(false); btn.focus(); });
+  });
+  document.addEventListener('click', function (e) { if (!sw.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); } });
+  collect();
+  // Czech is the default; a language chosen earlier, or ?lang=en|de, replaces it
+  var want = 'cs';
+  try { want = new URLSearchParams(location.search).get('lang') || localStorage.getItem(KEY) || 'cs'; } catch (e) {}
+  if (want !== 'cs') setLang(want, false);
+
+  // the enquiry form: check the required fields, then send; the real address goes in the form's action
+  var f = document.querySelector('.enquiry-form form');
+  if (f) f.addEventListener('submit', function (e) {
+    var st = f.querySelector('[data-form-status]');
+    var bad = Array.prototype.filter.call(f.querySelectorAll('[required]'), function (el) { return !el.value.trim(); });
+    if (bad.length) { e.preventDefault(); bad[0].focus(); st.textContent = tx('Vyplňte prosím jméno, firmu, e-mail a co potřebujete vyrobit.', cur); }
+  });
+})();
+</script>
+<script src="js/motion-layer.js"></script>
+<script src="js/fab.js"></script>
+</body>
+</html>
